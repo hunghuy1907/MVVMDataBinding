@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.framgia.demodatabinding.screen.search.ItemSearchViewModel"
+            />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_item_github_user"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60">
+
+        <TextView
+            android:id="@+id/text_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@{viewModel.userObservableField.url}"
+            app:layout_constraintStart_toStartOf="@+id/text_uer_name"
+            app:layout_constraintTop_toBottomOf="@+id/text_uer_name"/>
+
+        <TextView
+            android:id="@+id/text_uer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_8"
+            android:text="@{viewModel.userObservableField.login}"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
